@@ -198,12 +198,16 @@ export default function App() {
         <motion.div
           animate={{ scale: [1, 1.15, 1], opacity: [0.38, 0.52, 0.38] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-32 right-[-5%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-amber-400/45 via-yellow-500/30 to-transparent blur-[160px]"
+  className="absolute -top-32 right-[-5%] w-[380px] sm:w-[800px] h-[380px] 
+  sm:h-[800px] rounded-full bg-gradient-to-br from-amber-400/35 
+  via-yellow-500/20 to-transparent blur-[60px] sm:blur-[160px] transform-gpu pointer-events-none"
         />
         <motion.div
           animate={{ scale: [1, 1.08, 1], opacity: [0.22, 0.32, 0.22] }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute top-[42%] left-[-10%] w-[680px] h-[680px] rounded-full bg-amber-500/25 blur-[150px]"
+        className="absolute top-[42%] left-[-10%] w-[320px] sm:w-[680px] h-[320px]
+         sm:h-[680px] rounded-full bg-amber-500/20 
+        blur-[50px] sm:blur-[150px] transform-gpu pointer-events-none"
         />
 
         <div className="absolute inset-0 select-none pointer-events-none overflow-hidden font-mono text-[11px] leading-relaxed text-amber-300/[0.045] flex flex-col justify-around p-8 sm:p-14">
@@ -322,12 +326,14 @@ export default function App() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
-                className="absolute w-[300px] h-[300px] rounded-full border border-amber-400/35 shadow-[0_0_35px_rgba(245,158,11,0.25)] pointer-events-none"
+className="absolute w-[300px] h-[300px] rounded-full border border-amber-400/35 
+shadow-[0_0_35px_rgba(245,158,11,0.25)] pointer-events-none transform-gpu"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 44, repeat: Infinity, ease: 'linear' }}
-                className="absolute w-[260px] h-[260px] rounded-full border border-dashed border-amber-400/25 pointer-events-none"
+             className="absolute w-[260px] h-[260px] rounded-full border border-dashed
+              border-amber-400/25 pointer-events-none transform-gpu"
               />
 
               <div className="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full p-2 bg-gradient-to-b from-amber-400/50 via-zinc-800 to-black shadow-[0_0_55px_rgba(245,158,11,0.35)]">
