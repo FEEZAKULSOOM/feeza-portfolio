@@ -300,8 +300,9 @@ export default function App() {
 
               <div className="pt-2">
                 <motion.button
-                  whileHover={{ scale: 1.03 }}
+                  whileHover={{ scale: 1.025, y: -2 }}
                   whileTap={{ scale: 0.97 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                   onClick={() => scrollTo('projects')}
                   className="px-6 py-2.5 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-400 to-amber-500 text-zinc-950 hover:brightness-110 transition-all flex items-center gap-2 shadow-[0_0_30px_rgba(245,158,11,0.45)]"
                 >
@@ -349,7 +350,7 @@ export default function App() {
 
               {/* Floating Tech Badges */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -8, 0], rotate: [0, 1.5, -1.5, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute top-2 left-2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#181a20]/95 border border-zinc-700/80 shadow-lg backdrop-blur-md"
               >
@@ -358,7 +359,7 @@ export default function App() {
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, -9, 0] }}
+                animate={{ y: [0, -9, 0], rotate: [0, -1.5, 1.5, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
                 className="absolute top-2 right-2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#181a20]/95 border border-zinc-700/80 shadow-lg backdrop-blur-md"
               >
@@ -367,7 +368,7 @@ export default function App() {
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -8, 0], rotate: [0, 1.2, -1.2, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
                 className="absolute top-[48%] -left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#181a20]/95 border border-cyan-500/40 shadow-lg backdrop-blur-md"
               >
@@ -376,7 +377,7 @@ export default function App() {
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -10, 0], rotate: [0, -1.2, 1.2, 0] }}
                 transition={{ duration: 6.2, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
                 className="absolute top-[48%] -right-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#181a20]/95 border border-emerald-500/40 shadow-lg backdrop-blur-md"
               >
@@ -385,7 +386,7 @@ export default function App() {
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, -7, 0] }}
+                animate={{ y: [0, -7, 0], rotate: [0, 1.5, -1.5, 0] }}
                 transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
                 className="absolute bottom-2 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#181a20]/95 border border-zinc-700/80 shadow-lg backdrop-blur-md"
               >
@@ -394,7 +395,7 @@ export default function App() {
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, -9, 0] }}
+                animate={{ y: [0, -9, 0], rotate: [0, -1.5, 1.5, 0] }}
                 transition={{ duration: 5.6, repeat: Infinity, ease: 'easeInOut', delay: 1.6 }}
                 className="absolute bottom-2 right-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#181a20]/95 border border-amber-500/40 shadow-lg backdrop-blur-md"
               >
@@ -425,6 +426,10 @@ export default function App() {
             ].map((card, i) => (
               <motion.div
                 key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -3, borderColor: 'rgba(245, 158, 11, 0.45)' }}
                 className="rounded-2xl p-4 bg-[#181a20] border border-zinc-800/80 flex items-center gap-3.5 transition-all shadow-sm"
               >
@@ -457,7 +462,13 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-            <div className="lg:col-span-7 rounded-2xl p-6 bg-[#181a20] border border-zinc-800/80 flex flex-col justify-between">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-7 rounded-2xl p-6 bg-[#181a20] border border-zinc-800/80 flex flex-col justify-between"
+            >
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-amber-400/10 text-amber-300 border border-amber-500/30">
@@ -477,7 +488,7 @@ export default function App() {
                 </p>
                 <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 mt-1">
                   <MapPin className="w-3 h-3 text-amber-400" />
-                  <span>Muzaffarabad, AJK, Pakistan</span>
+                  <span>Muzaffarabad / Mirpur, AJK, Pakistan</span>
                 </div>
 
                 <div className="mt-4 p-3 rounded-xl bg-black/40 border border-zinc-800/80 flex items-center justify-between">
@@ -510,10 +521,16 @@ export default function App() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             <div className="lg:col-span-5 flex flex-col gap-4">
-              <div className="rounded-2xl p-5 bg-[#181a20] border border-zinc-800/80">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="rounded-2xl p-5 bg-[#181a20] border border-zinc-800/80"
+              >
                 <div className="flex items-start justify-between gap-2">
                   <div className="w-8 h-8 rounded-lg bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0">
                     <Award className="w-4 h-4" />
@@ -531,9 +548,15 @@ export default function App() {
                 <p className="text-xs text-zinc-400 leading-relaxed mt-2">
                   Conferred in recognition of top-tier institutional academic standing and engineering excellence.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="rounded-2xl p-5 bg-[#181a20] border border-zinc-800/80">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-2xl p-5 bg-[#181a20] border border-zinc-800/80"
+              >
                 <div className="flex items-start justify-between gap-2">
                   <div className="w-8 h-8 rounded-lg bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0">
                     <Sparkles className="w-4 h-4" />
@@ -551,7 +574,7 @@ export default function App() {
                 <p className="text-xs text-zinc-400 leading-relaxed mt-2">
                   Conferred on competitive national merit for outstanding scholarly performance in software engineering.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -591,8 +614,12 @@ export default function App() {
                 skills: ['Git & GitHub', 'Postman Testing', 'Linux / Bash', 'Render PaaS', 'Vercel Deployment', 'Three.js (In Progress)']
               }
             ].map((group, i) => (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="p-4 rounded-2xl bg-[#181a20] border border-zinc-800/80"
               >
                 <div className="flex items-center gap-2 mb-3.5 text-white font-semibold text-xs">
@@ -606,7 +633,7 @@ export default function App() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -624,9 +651,13 @@ export default function App() {
           </div>
 
           <div className="space-y-6">
-            {projects.map((project) => (
+            {projects.map((project, idx) => (
               <motion.div
                 key={project.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ borderColor: 'rgba(245, 158, 11, 0.45)' }}
                 className="rounded-2xl p-6 bg-[#181a20] border border-zinc-800/80 shadow-md transition-all"
               >
@@ -703,8 +734,8 @@ export default function App() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-4">
-                  {project.metrics.map((m, idx) => (
-                    <div key={idx} className="p-2.5 rounded-xl bg-black/40 border border-zinc-800/70 flex items-center justify-between">
+                  {project.metrics.map((m, i) => (
+                    <div key={i} className="p-2.5 rounded-xl bg-black/40 border border-zinc-800/70 flex items-center justify-between">
                       <span className="text-[11px] text-zinc-400">{m.label}</span>
                       <span className="text-xs font-bold text-amber-400 font-mono">{m.value}</span>
                     </div>
@@ -712,8 +743,8 @@ export default function App() {
                 </div>
 
                 <div className="space-y-2 mb-4">
-                  {project.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
+                  {project.highlights.map((highlight, i) => (
+                    <div key={i} className="flex items-start gap-2">
                       <div className="w-4 h-4 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
                         <Check className="w-2.5 h-2.5" />
                       </div>
@@ -725,9 +756,9 @@ export default function App() {
                 </div>
 
                 <div className="pt-3 border-t border-zinc-800/60 flex flex-wrap items-center gap-1.5">
-                  {project.technologies.map((t, idx) => (
+                  {project.technologies.map((t, i) => (
                     <span
-                      key={idx}
+                      key={i}
                       className="text-[10px] px-2 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono"
                     >
                       {t}
@@ -787,7 +818,6 @@ export default function App() {
                   <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
                   <span>Muzaffarabad, AJK, Pakistan (Open to Remote)</span>
                 </div>
-
               </div>
 
               {/* Quick Connect Chips */}
