@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #07080b;
+  color: #f4f4f5;
+  overflow-x: hidden;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #08090d;
+    color: #f4f4f5;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-1deg); }
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitSpinRev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseWarm {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.08); }
+}
+
+.anim-float-1 {
+  animation: float1 5s ease-in-out infinite;
+}
+
+.anim-float-2 {
+  animation: float2 6.5s ease-in-out infinite 1.5s;
+}
+
+.anim-orbit {
+  animation: orbitSpin 32s linear infinite;
+}
+
+.anim-orbit-rev {
+  animation: orbitSpinRev 42s linear infinite;
+}
+
+.anim-pulse-glow {
+  animation: pulseWarm 6s ease-in-out infinite;
+}
