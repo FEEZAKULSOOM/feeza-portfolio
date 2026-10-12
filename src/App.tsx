@@ -164,30 +164,7 @@ export default function App() {
         github: 'https://github.com/FEEZAKULSOOM/habitatx'
       }
     },
-    {
-      id: 'geomorph',
-      title: 'GeoMorph AI',
-      subtitle: 'Procedural 3D Spatial Engine',
-      category: 'Spatial Graphics / Generative Geometry',
-      status: 'In Progress / Active R&D',
-      statusColor: 'indigo',
-      description: 'Experimental procedural spatial exploration engine generating real-time browser meshes with runtime schema validation.',
-      highlights: [
-        'Elevated browser 3D rendering framerates from 22 FPS to a stable 60 FPS by designing a procedural wall-slicing algorithm in Three.js that isolates apertures without heavy Constructive Solid Geometry (CSG) overhead.',
-        'Eliminated runtime spatial generation crashes by 100% by enforcing strict type-safe schema validation with Zod to parse, sanitize, and validate generative coordinate payloads from the Google Gen AI SDK (Gemini Pro).',
-        'Enabled seamless first-person spatial walkthroughs with real-time collision detection and fluid physics by engineering browser navigation via Three.js PointerLockControls and custom bounding-box traversal.'
-      ],
-      technologies: ['TypeScript', 'Three.js (In Progress)', 'Google Gen AI SDK', 'Zod', 'Node.js', 'Vite'],
-      metrics: [
-        { label: 'Browser Render Framerate', value: '60 FPS' },
-        { label: 'Runtime Parsing Faults', value: '0%' },
-        { label: 'Memory CSG Overhead', value: '-70%' }
-      ],
-      architecture: 'Web-first spatial rendering pipeline bypassing costly CSG booleans via coordinate slicing, enforcing zero-crash generative geometry with strict Zod contracts and Gemini Pro AI coordinates.',
-      links: {
-        github: 'https://github.com/FEEZAKULSOOM'
-      }
-    }
+
   ];
 
   return (
@@ -494,7 +471,7 @@ shadow-[0_0_35px_rgba(245,158,11,0.25)] pointer-events-none transform-gpu"
                 </p>
                 <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 mt-1">
                   <MapPin className="w-3 h-3 text-amber-400" />
-                  <span>Muzaffarabad / Mirpur, AJK, Pakistan</span>
+                  <span>Muzaffarabad, AJK, Pakistan</span>
                 </div>
 
                 <div className="mt-4 p-3 rounded-xl bg-black/40 border border-zinc-800/80 flex items-center justify-between">
@@ -617,7 +594,7 @@ shadow-[0_0_35px_rgba(245,158,11,0.25)] pointer-events-none transform-gpu"
               {
                 icon: <Terminal className="w-4 h-4 text-sky-400" />,
                 title: 'Tools & Practices',
-                skills: ['Git & GitHub', 'Postman Testing', 'Linux / Bash', 'Render PaaS', 'Vercel Deployment', 'Three.js (In Progress)']
+                skills: ['Git & GitHub', 'Postman Testing', 'Render PaaS', 'Vercel Deployment']
               }
             ].map((group, i) => (
               <motion.div
